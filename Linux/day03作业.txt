@@ -40,7 +40,7 @@ sudo useradd -m alice   创建alice用户
 
 sudo passwd alice   为用户alice设置密码
 
-sudo gpasswd -a alice hh   使alice加入到apple.txt所属的lixiaochang组中
+sudo gpasswd -a alice lixiaochang   使alice加入到apple.txt所属的lixiaochang组中
 
 groups alice   使用groups命令显示
 
