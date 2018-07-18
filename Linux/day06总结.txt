@@ -68,6 +68,44 @@
 
       9. git merge命令
          git merge 分支名  # 将指定分支上做的工作合并到当前分支
+
+
+三：GitHub
+    GitHub是一个著名的代码托管网站。网址：https://www.github.com/
+    使用GitHub的步骤：
+    1. 注册GitHub帐号，并登录
+
+    2. 在本地操作系统(Linux)中，生成公钥。使用命令：
+       ssh-keygen -t rsa -C "邮箱地址"
+
+    3. 生成的公钥保存在.ssh目录下的id_rsa.pub文件，将
+       该文件中的内容复制。
+
+    4. 点击GitHub网站中的settings，进入设置页面，在设置
+       页面中点击SSH and GPG keys链接，进入公钥
+       设置页面，点击“New SSH key”按钮，将复制的公钥内容
+       粘贴到相应位置，添加公钥。
+
+    5. 在GitHub上创建一个远程仓库(repository),记得选中
+       “Initialize this repository with a README”复选框。
+
+    6. 在本地操作系统执行： git clone 远程仓库的ip
+       将远程仓库复制到本地。
+
+    7. 进入本地仓库的根目录(包含.git目录)： cd 仓库名
+
+    8. 建立本地仓库与远程仓库的关系： 
+       git remote add 远程仓库主机名(常用为origin) 远程仓库的ip
+       如果提示"远程 origin 已经存在"则可以使用以下命令重置origin
+       的指向地址：
+       git remote set-url 远程仓库主机名(常用为origin) 远程仓库的ip
+
+    9. 在本地工作区中进行相关操作。eg: git add 、git commit ...
+
+    10. 将本地仓库的内容推送到远程仓库
+        git push -u 远程仓库主机名 远程仓库的分支
+        eg:
+        git push -u origin master 
                
                     
 
