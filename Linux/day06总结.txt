@@ -1,0 +1,76 @@
+﻿一：Git简介
+    Git是一种分布式的版本控制工具,可以用来方便地管理代码。
+    安装Git的方法：sudo apt-get install git
+    查看Git的版本：git --version
+
+    Git全局配置
+    git config --global user.name "你的名字，作为提交用户名"
+    git config --global user.email "你的邮箱"
+    git config -l 显示所有配置信息
+
+二：Git常用操作
+    1. 初始化工作区
+       git init 工作区目录名
+       注意：工作区是一个包含了.git隐藏目录的目录。
+
+    2. 从工作区将内容添加到暂存区(stage、index)
+       git add 文件名
+
+    3. 从暂存区将内容提交到当前分支
+       git commit -m "提交信息"
+
+    4. 查看当前操作的状态
+       git status
+   
+    5. 查看提交日志
+       git log  查看提交日志的详细信息
+
+       git log --pretty=oneline  以简明方式查看提交日志信息
+
+    6. git reset [--hard | --soft | --mixed(默认)]  [commit]
+       解释：--hard做了三件事: 
+             eg:  git reset --hard e0aef
+             第一：
+             将分支重置到指定的提交id。
+             第二：
+             使用当前分支所指向的提交id的状态覆盖掉暂存区。
+             第三：
+             使用暂存区的状态覆盖掉工作区。   
+
+             --soft 只做了一件事：将分支重置到指定的提交id。
+             eg: git reset --soft e0aef
+
+             --mixed (默认) 做了两件事：
+             
+             第一：
+             将分支重置到指定的提交id。
+             第二：
+             使用当前分支所指向的提交id的状态覆盖掉暂存区。
+
+             注意：git reset的一种特殊用法
+                  以下操作相当于git add的反向操作
+                  git reset HEAD 文件名   # 从暂存区中将指定的文件撤出
+
+                  git reset -- 文件名   # 同上
+
+      7. git checkout [分支名|提交id]
+         git checkout命令的本质是修改HEAD的指向。如果git checkout后接某个提交id,
+         则当前状态处于“分离头指针”状态，不在任何分支上。
+         
+         切换到指定分支
+         git checkout 分支名
+
+
+      8. git branch命令
+         查看当前所有分支： git branch
+         创建分支： git branch 新分支名
+         删除分支： git branch -D 分支名
+
+      9. git merge命令
+         git merge 分支名  # 将指定分支上做的工作合并到当前分支
+               
+                    
+
+
+
+       
